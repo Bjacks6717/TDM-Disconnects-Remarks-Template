@@ -75,7 +75,7 @@ function clicked($btn) {
 <FORM name="myForm" action="file:///C:/Users/aa03064/OneDrive%20-%20Lumen/OSP%20Team/HTML%20Templates/TDM%20Trunk%20Remarks%20Templates.htm">
 <DIV style="background-color:lightgray; width: 100%; height: 650px;">
 <DIV style="background-color:lightgray; width: 50%; height: 650px; float:left;">
- <LEGEND style="font-size:40px;"><B>Mulitple TDM TG Remarks Template</B></LEGEND><HR> 
+ <LEGEND style="font-size:40px;"><B>TDM TG Disconnect Remarks Template</B></LEGEND><HR> 
 <FIELDSET style="background-color:lightblue;"><TABLE class="borderlessTable" style="margin: 5px; text-align: left;">
   <TBODY>
   <TR>
