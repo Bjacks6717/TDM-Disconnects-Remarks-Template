@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>OSP Team Page</title>
+</head>
+
+<body style="font-family:Source Sans Pro;" bgcolor="#c0c0c0">
+<a href="https://bjacks6717.github.io/OSPTeam/" class="button">Back to OSP Team Templates</a>
+
+<h1></h1>
+
+<SCRIPT language="JavaScript" type="text/javascript">
+
+
+var
+
+myArray = new Array();
+ 
+function g($elementToReturn) {
+	return document.getElementById($elementToReturn);
+}
+
+function copy() {
+	g('holdText').innerText = g('copyText').innerText;
+	Copied = g('holdText').createTextRange();
+	Copied.execCommand('Copy');
+	g('msgSpace').innerHTML = "Copied to Clipboard";
+	var t = setTimeout("g('msgSpace').innerHTML = \"\";", 3000);
+}
+function getCheckedValue(radioObj) {
+	if(!radioObj)
+		return "";
+	var radioLength = radioObj.length;
+	if(radioLength == undefined)
+		if(radioObj.checked)
+			return radioObj.value;
+		else
+			return "";
+	for(var i = 0; i < radioLength; i++) {
+		if(radioObj[i].checked) {
+			return radioObj[i].value;
+		}
+	}
+	
+	return "";
+}
+
+function clicked($btn) {
+	if ($btn == 'singletg') {
+		var str = "***SEND TO STAGENB - include S7TR for SS7 in CORE." + 
+			"\n***Project ID: " + g('projectid').value +
+			"\n***This is a Green National Network Request." +
+			"\n***Establish " + g('notg').value + " trunk group with " + g('ds0').value + " DS0 CHAN(s) from " + g('poi').value + 
+			"\nto Lumen NGS " + g('sbc').value + " consuming the following LIMs Service ID(s):\n\n" + g('natds1').value +  
+			"\n\nMessage Trunk with SS7.; " + 
+			"\nOSP Name: " + g('osp').value + "; " + 
+			"\nOSP Pt Code: " + g('osppc').value + "; " +
+			"\nOSP Switch CLLI: " + g('ospswitch').value + "; " + 
+			"\nOSP SS7 Hub Provider: " + g('ospss7').value + "; " + 
+			"\nOSP NOC#: " + g('ospnoc').value + "; " + 
+			"\n\n***Establish SS7 connectivity between " + g('sbc2').value + " to OSP Switch " + g('ospswitch').value + 
+			" Pt Code " + g('osppc').value + ".***"; 
+		g('copyText').value = str;
+	}
+	
+    else {
+		g('copyText').value = myArray[$btn];
+    }
+    copy();
+}
+
+</SCRIPT>
+
+<FORM name="myForm" action="file:///C:/Users/aa03064/OneDrive%20-%20Lumen/OSP%20Team/HTML%20Templates/TDM%20Trunk%20Remarks%20Templates.htm">
+<DIV style="background-color:lightgray; width: 100%; height: 650px;">
+<DIV style="background-color:lightgray; width: 50%; height: 650px; float:left;">
+ <LEGEND style="font-size:40px;"><B>Mulitple TDM TG Remarks Template</B></LEGEND><HR> 
+<FIELDSET style="background-color:lightblue;"><TABLE class="borderlessTable" style="margin: 5px; text-align: left;">
+  <TBODY>
+  <TR>
+    <TD style="font-size:20px; color:red;"><b>Choose applicable SBC</b></TD>
+	<TR>
+	<TR>
+	<TR>
+	<TR>
+	<TR>
+	<TR>
+    <TD align="left"><SELECT id="sbc">
+	<OPTION value="!!!!!___________________CHOOSE YOUR SBC___________________!!!!!" selected="">Select SBC</OPTION>
+	<OPTION value="HLRNCOFPGT1 PC 001-016-038">Highlands Ranch</OPTION> 
+	<OPTION value="CHCGILDTGT4 PC 001-016-29">Chicago</OPTION> 
+	<OPTION value="HSTSTXJVGT0 PC 001-016-128">Houston</OPTION></SELECT></TD>
+	<TD align="left"><SELECT id="sbc2">
+	<OPTION value="!!!!!___________________CHOOSE YOUR SWITCH CLLI___________________!!!!!" selected="">Select Switch CLLI</OPTION>
+	<OPTION value="Lumen Switch HLRNCOFPCA1 / Trunk CLLI HLRNCOFPGT1 001-016-038">HLRNCOFPCA1</OPTION> 
+	<OPTION value="Lumen Switch CHCGILDTCA9 / Trunk CLLI CHCGILDTGT4 PC 001-016-29">CHCGILDTCA9</OPTION> 
+	<OPTION value="Lumen Switch HSTSTXJVCA1 / Trunk CLLI HSTSTXJVGT0 PC 001-016-128">HSTSTXJVCA1</OPTION></SELECT></TD></TR></TABLE></FIELDSET><TABLE>
+	
+	
+	
+		
+	<TD><b>Project ID:</b></TD><TD valign="top"><INPUT id="projectid" type="text" size="48" style="padding:4px;" valign="top"></TD><TR><BR>
+	<TD><b>OSP Name:</b></TD><TD valign="top"><INPUT id="osp" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>Number of Trunk Groups?</b></TD><TD valign="top"><INPUT id="notg" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+    <TD><b># of DS0s:</b></TD><TD valign="top"><INPUT id="ds0" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>OSP SS7 Provider:</b></TD><TD valign="top"><INPUT id="ospss7" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>Lumen POI:</b></TD><TD valign="top"><INPUT id="poi" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>OSP Switch CLLI:</b></TD><TD valign="top"><INPUT id="ospswitch" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>OSP Point Code:</b></TD><TD valign="top"><INPUT id="osppc" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>OSP NOC #:</b></TD><TD valign="top"><INPUT id="ospnoc" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>Lumen DS1 Circuit ID:</b></TD><TD valign="top"><TEXTAREA id="natds1" type="text" style="height:75px; width:370px" valign="top"></TEXTAREA></TD><TR>
+	<TR>
+	<TR>
+	<TR>
+	<TR>
+	<TR>
+	<TR>
+	<TD valign="top"><INPUT class="build boxstyle"  onclick="clicked('singletg');" type="button" style="background-color:red; font-weight:bold; padding:4px 15px; color:white;" value="Build Remarks"></TD></TR></TBODY></TABLE></DIV>
+	<TR>
+	<TR>
+	<TR>
+	<TR>
+
+	<DIV style="background-color:lightgray; width:50%; height: 550px; float:left;">
+	<TABLE class="borderlessTable" style="margin: 5px; text-align: left;">
+	<TBODY>
+	<TR>
+	</TR>
+	</TBODY>
+	</DIV>
+ <LEGEND style="font-size:40px;"><B>Remarks Output</B></LEGEND><HR>
+ <TABLE>
+  <TBODY>
+  <TR>
+  <TR>
+  <TR>
+  <TR>
+  <TR>
+  <TD><TEXTAREA id="copyText" rows="50" cols="70"></TEXTAREA></TD>
+  <TD valign="top"><INPUT class="boxstyle box clipboard" style="background-color:lightgreen" "margin-bottom: 5px;" onclick='copyInternalExternal("internal")' type="button" value="Copy to Clipboard"></TD></TR></TBODY></TABLE>
+   
+	
+<SCRIPT>
+function copyInternalExternal(inorex)
+{
+	c = document.getElementById("copyText");
+	var sig = "";
+	if(inorex == "external"){	sig = document.getElementById("signatureText").value; c.value += "\n\n\n";	}
+	c.value += sig;
+	c.select();
+	document.execCommand('Copy');
+
+}
+
+
+</SCRIPT>
+ <INPUT class="boxstyle otherbuttons" style="background-color:yellow;" type="reset" value="Reset"></FIELDSET></FIELDSET></FIELDSET></FORM> 
+ 
+</DIV></DIV>
+</body>
+</html>
