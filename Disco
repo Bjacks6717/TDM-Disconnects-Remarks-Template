@@ -47,7 +47,8 @@ function getCheckedValue(radioObj) {
 
 function clicked($btn) {
 	if ($btn == 'singletg') {
-		var str = "***SEND TO STAGENB - include S7TR for SS7 in CORE." + 
+		var str = "***NG911 PARTIAL DISCONNECT:Request Order Entry of Teri Cisco's Service Deliver Team." +
+			"\n***DO NOT ROUTE TO disconnect team, this is a PARTIAL disconnect." +
 			"\n***Project ID: " + g('projectid').value +
 			"\n***This is a Green National Network Request." +
 			"\n***Establish " + g('notg').value + " trunk group with " + g('ds0').value + " DS0 CHAN(s) from " + g('poi').value + 
