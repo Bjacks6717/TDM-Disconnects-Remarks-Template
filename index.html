@@ -51,15 +51,15 @@ function clicked($btn) {
 			"\n***DO NOT ROUTE TO disconnect team, this is a PARTIAL disconnect." +
 			"\n***Project ID: " + g('projectid').value +
 			"\n***This is a Green National Network Request." +
-			"\n***PARTIAL Disconnect of " + g('notg').value + " trunk group(s) with " + g('ds0').value + " DS0 CHAN(s) from " + g('poi').value + 
-			"\nto Lumen NGS " + g('sbc').value + " consuming the following LIMs Service ID(s):\n\n" + g('natds1').value +  
-			"\n\nMessage Trunk with SS7.; " + 
-			"\nOSP Name: " + g('osp').value + "; " + 
-			"\nOSP Pt Code: " + g('osppc').value + "; " +
-			"\nOSP Switch CLLI: " + g('ospswitch').value + "; " + 
-			"\nOSP SS7 Hub Provider: " + g('ospss7').value + "; " + 
-			"\nOSP NOC#: " + g('ospnoc').value + "; " + 
-			"\n\n***Establish SS7 connectivity between " + g('sbc2').value + " to OSP Switch " + g('ospswitch').value + 
+			"\n***PARTIAL Disconnect of " + g('ds0').value + " DALs. Internal Service IDs: " + g('sid').value + 
+			"\n\nDisconnecting channels " + g('chan').value + "; " + 
+			"\nTCICs " + g('cic').value + "; " + 
+			"\nPSAP Name: " + g('psap').value + "; " +
+			"\nLumen TG Name: " + g('tgn').value + "; " + 
+			"\nLumen TSC: " + g('tsc').value + "; " + 
+			"\nOSP Disco Order/PON# " + g('ospdisc').value + "; " + 
+			"\nDisconnect Reason: " + g('reason').value + "; " + 
+			"\n\n***PARTIAL Disconnect of the SS7 route set between: Lumen Switch " + g('sbc2').value + " to OSP Switch " + g('ospswitch').value + 
 			" Pt Code " + g('osppc').value + ".***"; 
 		g('copyText').value = str;
 	}
@@ -102,14 +102,17 @@ function clicked($btn) {
 		
 	<TD><b>Project ID:</b></TD><TD valign="top"><INPUT id="projectid" type="text" size="48" style="padding:4px;" valign="top"></TD><TR><BR>
 	<TD><b>OSP Name:</b></TD><TD valign="top"><INPUT id="osp" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
-	<TD><b>Number of Trunk Groups?</b></TD><TD valign="top"><INPUT id="notg" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
-    <TD><b># of DS0s:</b></TD><TD valign="top"><INPUT id="ds0" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
-	<TD><b>OSP SS7 Provider:</b></TD><TD valign="top"><INPUT id="ospss7" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
-	<TD><b>Lumen POI:</b></TD><TD valign="top"><INPUT id="poi" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>PSAP Name:</b></TD><TD valign="top"><INPUT id="psap" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+    	<TD><b># of DS0s:</b></TD><TD valign="top"><INPUT id="ds0" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>Channels:</b></TD><TD valign="top"><INPUT id="chan" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>TCICs</b></TD><TD valign="top"><INPUT id="cic" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>Lumen TG Name</b></TD><TD valign="top"><INPUT id="tgn" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>Lumen TSC:</b></TD><TD valign="top"><INPUT id="tsc" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>OSP Disco Order/PON#:</b></TD><TD valign="top"><INPUT id="ospdisc" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
+	<TD><b>Disconnect Reason:</b></TD><TD valign="top"><INPUT id="reason" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
 	<TD><b>OSP Switch CLLI:</b></TD><TD valign="top"><INPUT id="ospswitch" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
 	<TD><b>OSP Point Code:</b></TD><TD valign="top"><INPUT id="osppc" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
-	<TD><b>OSP NOC #:</b></TD><TD valign="top"><INPUT id="ospnoc" type="text" size="48" style="padding:4px;" valign="top"></TD><TR>
-	<TD><b>Lumen DS1 Circuit ID:</b></TD><TD valign="top"><TEXTAREA id="natds1" type="text" style="height:75px; width:370px" valign="top"></TEXTAREA></TD><TR>
+	<TD><b>Lumen TG Internal Service ID:</b></TD><TD valign="top"><TEXTAREA id="sid" type="text" style="height:75px; width:370px" valign="top"></TEXTAREA></TD><TR>
 	<TR>
 	<TR>
 	<TR>
